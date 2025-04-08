@@ -5,10 +5,8 @@ import matplotlib.pyplot as plt
 
 x = np.array([1, 2, 3, 4, 5])
 y = 2 * x + np.random.randn(5) 
-
-
 x = np.linspace(0, 10, 100)
-y = 2 * x + np.random.randn(100) * 2  # noise with std dev 2
+y = 2 * x + np.random.randn(100) * 2  
 
 X = x
 Y = y
