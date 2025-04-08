@@ -2,10 +2,17 @@ import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
 
-x = [1, 2, 3, 4, 5]
-y = [2, 4, 6, 8, 10]
-X= np.array(x)
-Y = np.array(y)
+
+x = np.array([1, 2, 3, 4, 5])
+y = 2 * x + np.random.randn(5) 
+
+
+x = np.linspace(0, 10, 100)
+y = 2 * x + np.random.randn(100) * 2  # noise with std dev 2
+
+X = x
+Y = y
+
 
 m = 0
 b = 0
@@ -24,7 +31,7 @@ def gradient_descent(X, Y, m, b, iterations = 1000, learning_rate = 0.01):
         b -= learning_rate * b_gradient
     return m, b
 
-m,b = gradient_descent(X, Y, m, b, iterations = 10000, learning_rate = 0.05)
+m,b = gradient_descent(X, Y, m, b, iterations = 10000, learning_rate = 0.001)
 print("Slope (m):", m)
 print("Intercept (b):", b)
 plt.scatter(X, Y, color='blue', label='Data points')
