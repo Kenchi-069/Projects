@@ -11,7 +11,6 @@ y = np.array(y)
 X_train,X_test,y_train,y_test = train_test_split(X,y,test_size=0.2,random_state=42)
 
 
-
 class MyLogisticRegression:
     def __init__(self, learning_rate, iterations, b):
         self.learning_rate = learning_rate
@@ -44,7 +43,7 @@ class MyLogisticRegression:
         return (group >= 0.5).astype(int)
     
 
-model = MyLogisticRegression(learning_rate=0.01, iterations=1000, b=0.01)
+model = MyLogisticRegression(learning_rate=0.01, iterations=1000, b=0.001)
 model.fit(X_train,y_train)
 
 
