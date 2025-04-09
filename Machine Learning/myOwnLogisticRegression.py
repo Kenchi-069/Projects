@@ -10,6 +10,13 @@ y = np.array(y)
 
 X_train,X_test,y_train,y_test = train_test_split(X,y,test_size=0.2,random_state=42)
 
+from sklearn.preprocessing import StandardScaler
+
+scaler = StandardScaler()
+X_train = scaler.fit_transform(X_train)
+X_test = scaler.transform(X_test)
+
+
 class MyLogisticRegression:
     def __init__(self, learning_rate, iterations, b):
         self.learning_rate = learning_rate
@@ -44,16 +51,10 @@ class MyLogisticRegression:
 
 model = MyLogisticRegression(learning_rate=0.01, iterations=1000, b=0.0001)
 model.fit(X_train,y_train)
-from sklearn.linear_model import LogisticRegression
-classifier = LogisticRegression(random_state = 0)
-classifier.fit(X_train, y_train)
+
 
 y_pred = model.predict(X_test)
 
 accuracy = np.mean(y_pred == y_test)
 print("Accuracy:", accuracy)
 
-y_pred = classifier.predict(X_test)
-from sklearn.metrics import confusion_matrix
-cm = confusion_matrix(y_test, y_pred)
-print(cm)
