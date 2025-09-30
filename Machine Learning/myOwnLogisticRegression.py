@@ -40,7 +40,7 @@ class MyLogisticRegression:
         return self.sigmoid(X@self.w + self.b)
     
     def predict(self, X):
-        group = self.predict_probabillity(X)
+        group = self.predict_probability(X)
         return (group >= 0.5).astype(int)
     
 
