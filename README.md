@@ -18,4 +18,3 @@ Contains all self-initiated ML projects mentioned in my resume:
 
 ## 📚 Scholastic Achievements
 - Documentation and proofs of academic accomplishments
-d
